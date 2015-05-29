@@ -1,0 +1,4 @@
+MongoDB shell version: 2.4.9
+connecting to: test
+>  db.isMaster().maxBsonObjectSize
+16777216

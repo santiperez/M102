@@ -1,0 +1,9 @@
+mongoimport -- db test --collection products --file products.json
+
+connected to: 127.0.0.1
+Fri May 29 18:12:51.223 check 9 11
+Fri May 29 18:12:51.228 imported 11 objects
+
+
+> db.products.find( { type : "case" } ).count()
+3
