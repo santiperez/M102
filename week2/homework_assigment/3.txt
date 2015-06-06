@@ -1,0 +1,10 @@
+How many products have a voice limit? (That is, have a voice field present in the limits array.)
+
+Input your answer below, no spaces.
+
+While you can parse this one by eye, please try to use a query that will do the work of counting it for you.
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+db.products.find({"limits.voice":{$exists:1}}).count()
+3
