@@ -1,0 +1,17 @@
+Start a mongod server instance (if you still have a replica set, that would work too).
+
+Next, download the handout and run:
+mongo --shell localhost/performance performance.js
+homework.init()
+Build an index on the "active" and "tstamp" fields. You can verify that you've done your job with
+
+db.sensor_readings.getIndexes()
+When you are done, run:
+
+homework.a()
+and enter the numeric result below (no spaces).
+
+Answer
+db.sensor_readings.createIndex({active:1,tstamp:1})
+homework.a()
+6
