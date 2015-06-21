@@ -1,0 +1,72 @@
+Now convert the mongod instance (the one in the problem 4.1 above, which uses “--dbpath 1”) to a single server replica set. To do this, you’ll need to stop the mongod (NOT the mongo shell instance) and restart it with “--replSet” on its command line. Give the set any name you like.
+
+Then go to the mongo shell. Once there, run
+
+rs.initiate()
+Note: if you do not specify a configuration, the mongod will pick one based on your computer's hostname.
+
+When you first ran homework.init(), we loaded some data into the mongod. You should see it in the replication database. You can confirm with:
+
+use replication
+db.foo.find()
+Once done with that, run
+
+homework.b() in the mongo shell and enter that result below.
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+> rs.initiate()
+{
+        "info2" : "no configuration explicitly specified -- making one",
+        "me" : "Santi-VAIO:27001",
+        "info" : "Config now saved locally.  Should come online in about a minut
+e.",
+        "ok" : 1
+}
+> use replication
+switched to db replication
+replia:SECONDARY> db.foo.find()
+{ "_id" : ObjectId("5586d3ef3cfa13d91d13fe9f"), "x" : 0, "y" : 0.123404513346031
+31 }
+{ "_id" : ObjectId("5586d3ef3cfa13d91d13fea0"), "x" : 1, "y" : 0.532858470920473
+3 }
+{ "_id" : ObjectId("5586d3ef3cfa13d91d13fea1"), "x" : 2, "y" : 0.993650085059925
+9 }
+{ "_id" : ObjectId("5586d3ef3cfa13d91d13fea2"), "x" : 3, "y" : 0.780529307201504
+7 }
+{ "_id" : ObjectId("5586d3ef3cfa13d91d13fea3"), "x" : 4, "y" : 0.158009347971528
+77 }
+{ "_id" : ObjectId("5586d3ef3cfa13d91d13fea4"), "x" : 5, "y" : 0.880971902748569
+8 }
+{ "_id" : ObjectId("5586d3ef3cfa13d91d13fea5"), "x" : 6, "y" : 0.119527176721021
+53 }
+{ "_id" : ObjectId("5586d3ef3cfa13d91d13fea6"), "x" : 7, "y" : 0.087890784721821
+55 }
+{ "_id" : ObjectId("5586d3ef3cfa13d91d13fea7"), "x" : 8, "y" : 0.640524963615462
+2 }
+{ "_id" : ObjectId("5586d3ef3cfa13d91d13fea8"), "x" : 9, "y" : 0.737527421209961
+2 }
+{ "_id" : ObjectId("5586d3ef3cfa13d91d13fea9"), "x" : 10, "y" : 0.37480698456056
+416 }
+{ "_id" : ObjectId("5586d3ef3cfa13d91d13feaa"), "x" : 11, "y" : 0.14832620276138
+186 }
+{ "_id" : ObjectId("5586d3ef3cfa13d91d13feab"), "x" : 12, "y" : 0.29651622497476
+64 }
+{ "_id" : ObjectId("5586d3ef3cfa13d91d13feac"), "x" : 13, "y" : 0.99030335061252
+12 }
+{ "_id" : ObjectId("5586d3ef3cfa13d91d13fead"), "x" : 14, "y" : 0.37337198527529
+836 }
+{ "_id" : ObjectId("5586d3ef3cfa13d91d13feae"), "x" : 15, "y" : 0.73052739538252
+35 }
+{ "_id" : ObjectId("5586d3ef3cfa13d91d13feaf"), "x" : 16, "y" : 0.66872969316318
+63 }
+{ "_id" : ObjectId("5586d3ef3cfa13d91d13feb0"), "x" : 17, "y" : 0.32254583318717
+78 }
+{ "_id" : ObjectId("5586d3ef3cfa13d91d13feb1"), "x" : 18, "y" : 0.57566775125451
+39 }
+{ "_id" : ObjectId("5586d3ef3cfa13d91d13feb2"), "x" : 19, "y" : 0.94095613132230
+94 }
+Type "it" for more
+replia:PRIMARY> homework.b()
+5002
+
