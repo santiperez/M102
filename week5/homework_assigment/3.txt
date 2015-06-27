@@ -1,0 +1,17 @@
+HOMEWORK: HOMEWORK 5.3
+
+At the beginning of the section, "W Timeout and Capacity Planning", Dwight mentioned something that hasn't yet been touched upon in this class: Bulk Inserts.
+
+He mentions that you can find information on them in the docs.
+
+Your job is to look this functionality up in the documentation, and use it for the following problem:
+
+Please insert into the m102 collection, the following 3 documents, using only a one shell query:
+
+{ "a" : 1 }
+{ "b" : 2 }
+{ "c" : 3 }
+
+Hints: You will not use either of the Bulk() objects, which were discussed earlier in this course. Also, this does not involve semicolons, so don't put any into the text box. Your answer should involve a single line, starting with 'db.m102...' You probably want to test this on your machine, and then copy and paste the insert query in the box below. Do not include the > sign from the beginning of the shell.
+
+db.m102.insert([{"a":1},{"b":2},{"c":3}]) 
